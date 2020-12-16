@@ -1,6 +1,8 @@
 import './App.css';
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Header from "./components/layouts/Header";
+import Footer from "./components/layouts/Footer";
 
 
 
@@ -8,9 +10,13 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <Header />
+      <Switch>
+
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
