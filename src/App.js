@@ -1,5 +1,5 @@
 import './App.scss';
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
@@ -15,7 +15,7 @@ import Register from "./components/user-components/Register";
 import Login from './components/user-components/Login';
 import ForgotPassword from "./components/user-components/ForgotPassword";
 import ChangePassword from './components/user-components/ChangePassword';
-
+import UserActivated from "./components/user-components/UserActivated";
 
 
 function App() {
