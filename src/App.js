@@ -32,7 +32,7 @@ function App() {
       }
 
       const userRes = await Axios.post(
-        "http://localhost:8080/users/tokenIsValid",
+        "https://blog-app-revised.herokuapp.com/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
         );
@@ -48,7 +48,7 @@ function App() {
 
   useEffect(() => {
     Axios
-    .get('http://localhost:8080/posts')
+    .get('https://blog-app-revised.herokuapp.com/posts')
     .then(res => setPosts(res.data))
     .catch(error => console.log(error));
   })
