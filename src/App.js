@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
 import UserContext from "./components/context/UserContext";
-import ErrorNotice from "./components/utils/ErrorNotice";
 import EditPost from "./components/post-components/EditPost";
 import CreatePost from "./components/post-components/CreatePost";
 import AdminLogin from "./components/user-components/AdminLogin";
