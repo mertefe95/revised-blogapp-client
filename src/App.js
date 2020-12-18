@@ -52,7 +52,7 @@ function App() {
       }
 
       const userRes = await Axios.post(
-        "https://blog-app-revised.herokuapp.com/tokenIsValid",
+        "https://blog-app-revised.herokuapp.com/users/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
         );
