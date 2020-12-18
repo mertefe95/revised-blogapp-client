@@ -21,7 +21,7 @@ const Posts = ({ posts }) => {
 
 const deletePost = id => {
     try {
-        Axios.delete(`http://localhost:8080/posts/${id}`)
+        Axios.delete(`https://blog-app-revised.herokuapp.com/posts/${id}`)
             .then(res => alert(res.data))
             setPost(post.filter(elem => elem._id !== id));
         }   catch (err) {
@@ -69,7 +69,7 @@ return (
         </Link>
         </CardActions>
 
-        <p>Created on  <q>{ post.createdAt }</q> by  {post.authorName}</p>
+        <p className="blog-time-text">Created on  <q>{ post.createdAt }</q> by  {post.authorName}</p>
 
 
         </Grid>
