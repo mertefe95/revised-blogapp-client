@@ -26,13 +26,11 @@ const EditPost = props => {
             blogText,
             userId
         };
-
-        console.log(props.match.params.id)
-
+        
   
 
         Axios
-            .put(`https://blog-app-revised.herokuapp.com/posts/${props.match.params.id}`, post)
+            .put(`http://localhost:8080/posts/edit/${props.match.params.id}`, post)
             .then(res => setMessage(res.data.msg))
             .catch(err => {
                 err.response.data.msg && setError(err.response.data.msg);
