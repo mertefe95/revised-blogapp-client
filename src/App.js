@@ -17,7 +17,6 @@ import ForgotPassword from "./components/user-components/ForgotPassword";
 import ChangePassword from './components/user-components/ChangePassword';
 import UserActivated from "./components/user-components/UserActivated";
 
-
 function App() {
   const [posts, setPosts] = useState([])
   const [userData, setUserData] = useState({
@@ -56,22 +55,38 @@ function App() {
   })
 
   return (
+    
     <Router>
-      <UserContext.Provider value={{ userData, setUserData }}>
+    <UserContext.Provider value={{ userData, setUserData }}>
       <Header />
       <Switch>
-        <Route exact path="/" exact render={() => <Posts posts={posts} />} />
-        <Route exact path="/post/:id" exact render={(props) => <Post {...props} posts={posts} />} />
+        <Route exact path="/"  exact render={() => <Posts posts={posts} />} />
+        <Route exact path="/post/:id" exact render={(props) => <Post {...props}  posts={posts} />} />
         <Route exact path="/admin-login" exact component={AdminLogin} />
         <Route exact path="/register" exact component={Register} />
         <Route exact path="/login" exact component={Login} />
         <Route exact path="/forgot-password" exact component={ForgotPassword} />
         <Route exact path="/change-password/:forgotToken" exact component={ChangePassword} />
         <Route exact path="/user-activated/:activationKey" exact component={UserActivated} />
+        { userData.user ? (
+          <Route exact path="/edit-post/:id" exact render={(props) => <EditPost {...props}  posts={posts} />} />
+          
+      ) : (
+          <>
+          </>
+      )} 
+        { userData.user ? (
+          <Route exact path="/create-post" exact component={CreatePost} />
+          
+      ) : (
+          <>
+          </>
+      )} 
       </Switch>
       <Footer />
       </UserContext.Provider>
     </Router>
+
   );
 }
 
