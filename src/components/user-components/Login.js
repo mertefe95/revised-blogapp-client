@@ -37,7 +37,7 @@ const Login = () => {
     try {
       const loginUser = { email , password }
 
-      const loginRes = await Axios.post("http://localhost:8080/users/login", loginUser);
+      const loginRes = await Axios.post("https://blog-app-revised.herokuapp.com/users/login", loginUser);
 
       setUserData({
         token: loginRes.data.token,

@@ -31,7 +31,7 @@ const ForgotPassword = () => {
 
     try {
     await Axios.post(
-        "http://localhost:8080/users/forgot-password", 
+        "https://blog-app-revised.herokuapp.com/users/forgot-password", 
         user
     );
 

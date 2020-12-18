@@ -41,7 +41,7 @@ const submit = async (e) => {
 
   try {
     const changePw = { newPassword, forgotToken };
-    await Axios.post("http://localhost:8080/users/change-password/", changePw);
+    await Axios.post("https://blog-app-revised.herokuapp.com/users/change-password/", changePw);
 
     setNoticeMessage({
       text: "Password has changed, please proceed to login."

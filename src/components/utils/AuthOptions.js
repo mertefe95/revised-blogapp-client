@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import UserContext from "../context/UserContext";
 import  { useHistory, Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 
 const AuthOptions = () => {
@@ -22,12 +23,16 @@ const AuthOptions = () => {
     { userData.user ? (
       <ul className="header-ul">
       <li><Link to="/create-post">CREATE A POST</Link></li>
-      <li><button onClick={logout}>Logout</button></li>
+      <li><Button variant="outlined" size="small" onClick={logout}>Logout</Button></li>
       </ul>
     ) : (
       <ul className="header-ul">
-        <li><button onClick={register}>Register</button></li>
-        <li><button onClick={login}>Login</button></li>
+        <li><Button onClick={register} variant="outlined" size="small">
+          Register
+        </Button></li>
+        <li><Button onClick={login} variant="outlined" size="small">
+          Login
+        </Button></li>
       </ul>
     )}
 

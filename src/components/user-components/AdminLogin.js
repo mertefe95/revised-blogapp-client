@@ -22,7 +22,7 @@ const AdminLogin = () => {
 
     try {
       const adminUser = { email, password} 
-      const adminRes = await Axios.post("http://localhost:8080/users/login", adminUser)
+      const adminRes = await Axios.post("https://blog-app-revised.herokuapp.com/users/login", adminUser)
       
       setUserData({
         token: adminRes.data.token,

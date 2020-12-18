@@ -1,7 +1,7 @@
 import './App.scss';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-import Header from "./components/layouts/Header";
+import Header from "./components/blog-template/Header";
 import Footer from "./components/layouts/Footer";
 import UserContext from "./components/context/UserContext";
 import EditPost from "./components/post-components/EditPost";
@@ -15,6 +15,7 @@ import Login from './components/user-components/Login';
 import ForgotPassword from "./components/user-components/ForgotPassword";
 import ChangePassword from './components/user-components/ChangePassword';
 import UserActivated from "./components/user-components/UserActivated";
+import Blog from "./components/blog-template/Blog";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -22,6 +23,21 @@ function App() {
     token: undefined,
     user: undefined
   });
+
+
+  const sections = [
+    { title: 'Technology', url: '#' },
+    { title: 'Design', url: '#' },
+    { title: 'Culture', url: '#' },
+    { title: 'Business', url: '#' },
+    { title: 'Politics', url: '#' },
+    { title: 'Opinion', url: '#' },
+    { title: 'Science', url: '#' },
+    { title: 'Health', url: '#' },
+    { title: 'Style', url: '#' },
+    { title: 'Travel', url: '#' },
+  ];
+
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -57,7 +73,7 @@ function App() {
     
     <Router>
     <UserContext.Provider value={{ userData, setUserData }}>
-      <Header />
+    <Header title="Blog" sections={sections} />
       <Switch>
         <Route exact path="/"  exact render={() => <Posts posts={posts} />} />
         <Route exact path="/post/:id" exact render={(props) => <Post {...props}  posts={posts} />} />
@@ -67,6 +83,7 @@ function App() {
         <Route exact path="/forgot-password" exact component={ForgotPassword} />
         <Route exact path="/change-password/:forgotToken" exact component={ChangePassword} />
         <Route exact path="/user-activated/:activationKey" exact component={UserActivated} />
+        <Route exact path="/blog" exact component={Blog} />
         { userData.user ? (
           <Route exact path="/edit-post/:id" exact render={(props) => <EditPost {...props}  posts={posts} />} />
           
