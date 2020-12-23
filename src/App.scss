@@ -165,3 +165,42 @@
   background-color: white;
   border-style: none;
 }
+
+.login-page, .register-page {
+  font-family: 'Roboto';
+  margin-top: 80px;
+}
+
+#login-form, #register-form {
+  padding: 20px;
+}
+
+#login-form button, #register-form button {
+  margin: 20px;
+}
+
+#register-btn, #login-btn {
+  font-weight: 600;
+}
+
+.register-bottom-ul {
+  list-style: none;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register-bottom-ul > li {
+  color: grey;
+  text-decoration: none;
+  font-size: 10px;
+}
+
+.admin-link, .forgot-link {
+  color: grey;
+  text-decoration: none;
+  font-size: 16px;
+
+}

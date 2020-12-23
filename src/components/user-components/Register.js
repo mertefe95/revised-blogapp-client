@@ -87,19 +87,24 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
- <Button variant="contained" color="primary" type="submit">
+ <Button id="register-btn" variant="outlined"  type="submit">
         Submit
     </Button>
 
+    <ul className="register-bottom-ul">
     <Typography className={classes.root}>
-    <Link to="/admin-login">
+    <li>
+    <Link className="admin-link" to="/admin-login">
     Admin Login
     </Link>
-    <Link to="/forgot-password" >
+    </li>
+    <li>
+    <Link className="forgot-link" to="/forgot-password" >
     Forgot your password?
     </Link>
+    </li>
     </Typography>
-
+    </ul>
 
     </form>
         </div>
