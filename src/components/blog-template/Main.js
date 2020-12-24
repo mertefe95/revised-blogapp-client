@@ -11,8 +11,6 @@ import Axios from "axios";
 
 
 
-
-
 export default function Main(props) {
   const { title, posts } = props;
   const { userData } = useContext(UserContext); 
@@ -44,13 +42,13 @@ export default function Main(props) {
         {title}
       </Typography>
       <Divider />
-      {posts.map((post, key) => (
+      { posts.sort((a, b) => b.createdAt - a.createdAt).map((post, key) => (
         <div className="post-div" key={key}>
           <h5 className="post-title"><Link className="title-link" to={{
             pathname: `/post/${post._id}`
           }}>{post.blogTitle}</Link></h5>
           <p className="post-time-author">{post.createdAt} by <Link className="author-link" to="#">{post.authorName}</Link> </p>
-          <p className="post-text ">{post.blogText}</p>
+          <p className="post-text">{post.blogText}</p>
       
           { userData.user && userData.user.id === post.userId ? (
             <div className="post-icons-div">
@@ -59,7 +57,6 @@ export default function Main(props) {
             </div>
         ) : (
             <>
-
             </>
         )}
     

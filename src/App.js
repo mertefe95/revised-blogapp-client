@@ -16,10 +16,7 @@ import ForgotPassword from "./components/user-components/ForgotPassword";
 import ChangePassword from './components/user-components/ChangePassword';
 import UserActivated from "./components/user-components/UserActivated";
 import Blog from "./components/blog-template/Blog";
-import Main from "./components/blog-template/Main";
-import MainFeaturedPost from "./components/blog-template/MainFeaturedPost";
-import Markdown from "./components/blog-template/Markdown";
-import FeaturedPost from "./components/blog-template/FeaturedPost";
+
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -41,7 +38,6 @@ function App() {
     { title: 'Style', url: '#' },
     { title: 'Travel', url: '#' },
   ];
-
 
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -69,7 +65,7 @@ function App() {
   useEffect(() => {
     Axios
     .get('https://blog-app-revised.herokuapp.com/posts')
-    .then(res => setPosts(res.data))
+    .then(res => setPosts(res.data.reverse()))
     .catch(error => console.log(error));
   })
 
