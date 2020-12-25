@@ -39,33 +39,6 @@
   }
 }
 
-.register-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  #register-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
-
-.login-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  #login-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-}
 
 .forgot-password-page {
   display: flex;
@@ -170,10 +143,6 @@
   font-family: 'Roboto';
 }
 
-#login-form, #register-form {
-  padding: 20px;
-}
-
 #login-form button, #register-form button {
   margin: 20px;
 }
@@ -203,19 +172,78 @@
   font-size: 16px;
 }
 
-.login-page, .register-page  {
+.register-page  {
   height: 100vh;
+  text-align: center;
+  margin-top: 100px;
+}
+.login-page {
+  height: 100vh;
+  text-align: center;
+  margin-top: 170px;
 }
 
+
 #login-form, #register-form {
-  margin-bottom: 100px;
-  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
 #my-profile {
   height: 100vh;
 }
 
+.my-profile-ul {
+  list-style: none;
+  font-family: 'Roboto';
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 100px;
+}
+
+.my-profile-ul > li {
+  padding: 20px;
+}
+
+
 #main-container {
   height: 150vh;
+}
+
+#edit-profile-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#edit-profile-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 250px;
+}
+
+.message {
+  padding: 20px;
+}
+
+.create-post-page {
+  text-align: center;
+  height: 80vh;
+  padding-top: 70px;
+}
+
+#create-post-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -79,7 +79,7 @@ const CreatePost = () => {
             id="blogText"  
             onChange={e => setBlogText(e.target.value)} 
         />
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant="contained" color="default" type="submit">
                 Submit
             </Button>
 

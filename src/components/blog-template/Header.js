@@ -11,14 +11,12 @@ import { Container } from "@material-ui/core";
 import  { useHistory} from "react-router-dom";
 
 
-
-
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
   },
   toolbarTitle: {
-    flex: 1,
+    flex: 1 
   },
   toolbarSecondary: {
     justifyContent: 'space-between',
@@ -52,6 +50,7 @@ export default function Header(props) {
   const history = useHistory();
   const click = () => history.push("/") 
 
+
   return (
     <React.Fragment>
     <Container maxWidth="lg">
@@ -65,7 +64,7 @@ export default function Header(props) {
           noWrap
           className={classes.toolbarTitle}
         >
-          {title}
+          <Button onClick={click}>{title}</Button>
         </Typography>
         <IconButton>
           <SearchIcon />

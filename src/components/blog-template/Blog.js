@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 const sidebar = {
   title: 'About',
   description:
@@ -51,8 +50,8 @@ export default function Blog({ posts }) {
       <Container  maxWidth="lg">
         
         <main>
-          <Grid  id="main-container" container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts}  />
+          <Grid id="main-container" container spacing={5} className={classes.mainGrid}>
+            <Main title="Welcome to the Blog Application" posts={posts}  />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
