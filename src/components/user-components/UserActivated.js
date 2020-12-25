@@ -24,7 +24,7 @@ useEffect(() => {
 
 
   return (
-    <div className="user-activated-page">
+    <div id="user-activated-page">
     <h2>User Activation</h2>
 
     <h4> {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
