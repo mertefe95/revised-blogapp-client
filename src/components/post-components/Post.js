@@ -22,7 +22,6 @@ useEffect(() => {
         setAuthorName(res.data.authorName)
     ])
     .catch(err => err.response.data.msg && setError(err.response.data.msg));
-
     } catch (err) {
         err.response.data.msg && setError(err.response.data.msg);
     }
@@ -47,7 +46,7 @@ const useStyles = makeStyles({
   
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+
 
     return (
         <div>

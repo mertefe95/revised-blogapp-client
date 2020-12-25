@@ -13,7 +13,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 const Register = () => {
     const [username, setUsername] = useState();
     const [firstname, setFirstname] = useState();
-    const [lastName, setLastName] = useState();
+    const [lastname, setLastName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
@@ -37,7 +37,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-        const newUser = { username, email, password };
+        const newUser = { username, email, password, firstname, lastname };
         await Axios.post("https://blog-app-revised.herokuapp.com/users/register", newUser);
 
         setVerifyMessage({
@@ -59,7 +59,7 @@ const Register = () => {
 
       <form id="register-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
       
-      <TextField required id="standard-first-input"
+      <TextField 
           label="Username"
           type="text"
           autoComplete="current-username"
@@ -96,7 +96,7 @@ const Register = () => {
         
       />
 
-<TextField required id="standard-email-input"
+<TextField 
           label="Email"
           type="email"
           autoComplete="current-email"
@@ -104,7 +104,7 @@ const Register = () => {
           onChange={(e) => setEmail(e.target.value)}  
           
         />
-<TextField required id="standard-password-input"
+<TextField 
           label="Password"
           type="password"
           autoComplete="current-password"

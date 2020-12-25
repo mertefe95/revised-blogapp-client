@@ -2,13 +2,12 @@ import './App.scss';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Header from "./components/blog-template/Header";
-import Footer from "./components/layouts/Footer";
+import Footer from "./components/blog-template/Footer";
 import UserContext from "./components/context/UserContext";
 import EditPost from "./components/post-components/EditPost";
 import CreatePost from "./components/post-components/CreatePost";
 import AdminLogin from "./components/user-components/AdminLogin";
 import Post from "./components/post-components/Post";
-import Posts from "./components/post-components/Posts";
 import Axios from "axios";
 import Register from "./components/user-components/Register";
 import Login from './components/user-components/Login';
@@ -17,9 +16,11 @@ import ChangePassword from './components/user-components/ChangePassword';
 import UserActivated from "./components/user-components/UserActivated";
 import Blog from "./components/blog-template/Blog";
 import MyProfile from "./components/user-components/MyProfile";
+import EditProfile from "./components/user-components/EditProfile";
 
 function App() {
   const [posts, setPosts] = useState([])
+
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined
@@ -69,38 +70,48 @@ function App() {
     .catch(error => console.log(error));
   })
 
+  
   return (
     
     <Router>
     <UserContext.Provider value={{ userData, setUserData }}>
     <Header title="Blog" sections={sections} />
       <Switch>
-        <Route exact path="/" exact render={() => <Blog posts={posts} />} />
-        <Route exact path="/post/:id" exact render={(props) => <Post {...props}  posts={posts} />} />
-        <Route exact path="/user-profile/:id" exact component={MyProfile} />
-        <Route exact path="/admin-login" exact component={AdminLogin} />
-        <Route exact path="/register" exact component={Register} />
-        <Route exact path="/login" exact component={Login} />
-        <Route exact path="/forgot-password" exact component={ForgotPassword} />
-        <Route exact path="/change-password/:forgotToken" exact component={ChangePassword} />
-        <Route exact path="/user-activated/:activationKey" exact component={UserActivated} />
-        <Route exact path="/blog" exact component={Blog} exact render={() => <Posts posts={posts} />}  />
+        <Route exact path="/" render={() => <Blog posts={posts} />} />
+        <Route exact path="/post/:id" render={(props) => <Post {...props}  posts={posts} />} />
+  
+        <Route exact path="/admin-login"  component={AdminLogin} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/forgot-password"  component={ForgotPassword} />
+        <Route exact path="/change-password/:forgotToken" component={ChangePassword} />
+        <Route exact path="/user-activated/:activationKey" component={UserActivated} />
         { userData.user ? (
-          <Route exact path="/edit-post/:id" exact render={(props) => <EditPost {...props}  posts={posts} />} />
-          
-      ) : (
+          <Route exact path="/myprofile/edit/:id" component={EditProfile} />
+        ) : (
           <>
           </>
-      )} 
+        )}
         { userData.user ? (
-          <Route exact path="/create-post" exact component={CreatePost} />
-          
-      ) : (
+          <Route exact path="/myprofile/:id"  component={MyProfile} />
+        ) : (
           <>
           </>
-      )} 
+        )}
+        { userData.user ? (
+          <Route exact path="/edit-post/:id"  render={(props) => <EditPost {...props}  posts={posts} />} />        
+          ) : (
+          <>
+          </>
+          )} 
+        { userData.user ? (
+          <Route exact path="/create-post"  component={CreatePost} />      
+        ) : (
+          <>
+          </>
+        )} 
       </Switch>
-      <Footer />
+      <Footer title="Footer" description="Something here to give the footer a purpose!" />
       </UserContext.Provider>
     </Router>
 

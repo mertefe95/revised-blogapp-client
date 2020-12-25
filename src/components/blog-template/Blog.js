@@ -8,10 +8,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Main from './Main';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
-import post1 from './blog-post.1.md';
-import post2 from './blog-post.2.md';
-import post3 from './blog-post.3.md';
+
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -19,35 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
-const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
-  description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random',
-  imgText: 'main image description',
-  linkText: 'Continue reading…',
-};
-
-const featuredPosts = [
-  {
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
-  },
-  {
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-    image: 'https://source.unsplash.com/random',
-    imageText: 'Image Text',
-  },
-];
 
 
 const sidebar = {
@@ -80,11 +48,11 @@ export default function Blog({ posts }) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <Container  maxWidth="lg">
         
         <main>
-          <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+          <Grid  id="main-container" container spacing={5} className={classes.mainGrid}>
+            <Main title="From the firehose" posts={posts}  />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -94,7 +62,7 @@ export default function Blog({ posts }) {
           </Grid>
         </main>
       </Container>
-      <Footer title="Footer" description="Something here to give the footer a purpose!" />
+      
     </React.Fragment>
   );
 }

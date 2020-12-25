@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -31,16 +30,16 @@ export default function Sidebar(props) {
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Archives
       </Typography>
-      {archives.map((archive) => (
-        <Link display="block" variant="body1" href={archive.url} key={archive.title}>
+      {archives.map((archive, key) => (
+        <Link display="block" variant="body1" to={archive.url} key={key}>
           {archive.title}
         </Link>
       ))}
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
         Social
       </Typography>
-      {social.map((network) => (
-        <Link display="block" variant="body1" href="#" key={network}>
+      {social.map((network, key) => (
+        <Link display="block" variant="body1" to="#" key={key}>
           <Grid container direction="row" spacing={1} alignItems="center">
             <Grid item>
               <network.icon />

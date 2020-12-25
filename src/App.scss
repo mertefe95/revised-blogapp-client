@@ -168,7 +168,6 @@
 
 .login-page, .register-page {
   font-family: 'Roboto';
-  margin-top: 80px;
 }
 
 #login-form, #register-form {
@@ -204,3 +203,19 @@
   font-size: 16px;
 }
 
+.login-page, .register-page  {
+  height: 100vh;
+}
+
+#login-form, #register-form {
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+#my-profile {
+  height: 100vh;
+}
+
+#main-container {
+  height: 150vh;
+}

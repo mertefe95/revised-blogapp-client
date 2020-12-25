@@ -9,7 +9,6 @@ import TextField from "@material-ui/core/TextField"
 
 const AdminLogin = () => {
   const [error, setError] = useState();
-  const [noticeMessage, setNoticeMessage] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -61,7 +60,7 @@ return (
 
         <form id="admin-login-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 
-<TextField required id="standard-email-input"
+<TextField
           label="Email"
           type="email"
           autoComplete="current-email"
@@ -69,7 +68,7 @@ return (
           onChange={(e) => setEmail(e.target.value)}  
           
         />
-<TextField required id="standard-password-input"
+<TextField
           label="Password"
           type="password"
           autoComplete="current-password"

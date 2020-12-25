@@ -56,7 +56,7 @@ const ForgotPassword = () => {
 
     <form id="forgot-password-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 
-    <TextField required id="standard-email-input"
+    <TextField
           label="Email"
           type="email"
           autoComplete="current-email"

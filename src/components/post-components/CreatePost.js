@@ -18,8 +18,6 @@ const CreatePost = () => {
     const authorName = userData.user.username
     const userId = userData.user.id
 
-    console.log(userId)
-
     const useStyles = makeStyles((theme) => ({
         root: {
           '& > *': {
@@ -67,14 +65,14 @@ const CreatePost = () => {
             </h4>
             
             <form id="create-post-form" onSubmit={changeOnClick} encType="multipart/form-data"  className={classes.root} noValidate autoComplete="off">    
-        <TextField required id="standard-blogTitle-input"
+        <TextField 
             label="Blog Title"
             type="text"
             autoComplete="current-blogTitle"
             id="blogTitle"
             onChange={e => setBlogTitle(e.target.value)}
         />
-        <TextField required id="standard-blogText-input"
+        <TextField 
             label="Blog Text"
             type="text"
             autoComplete="current-blogText"

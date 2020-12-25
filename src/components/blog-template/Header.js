@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
@@ -74,13 +73,13 @@ export default function Header(props) {
         <AuthOptions />
       </Toolbar>
       <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-        {sections.map((section) => (
+        {sections.map((section, key) => (
           <Link
             color="inherit"
             noWrap
-            key={section.title}
+            key={key}
             variant="body2"
-            href={section.url}
+            to={section.url}
             className={classes.toolbarLink}
           >
             {section.title}

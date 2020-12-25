@@ -64,14 +64,14 @@ const EditPost = props => {
 
 
             <form id="edit-post-form" onSubmit={changeOnClick} encType="multipart/form-data"  className={classes.root} noValidate autoComplete="off">    
-        <TextField required id="standard-blogTitle-input"
+        <TextField 
             label="Blog Title"
             type="text"
             autoComplete="current-blogTitle"
             id="blogTitle"
             onChange={e => setBlogTitle(e.target.value)}
         />
-        <TextField required id="standard-blogText-input"
+        <TextField 
             label="Blog Text"
             type="text"
             autoComplete="current-blogText"

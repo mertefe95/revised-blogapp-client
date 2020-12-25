@@ -12,9 +12,7 @@ const Login = () => {
   const [error, setError] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [noticeMessage, setNoticeMessage] = useState({
-    text: undefined
-  });
+
 
   const { setUserData } = useContext(UserContext);
   const history = useHistory();
@@ -56,14 +54,13 @@ const Login = () => {
     <div className="login-page">
     <h2>Login</h2>
 
-    <h3 className="notice-message">{noticeMessage.text}</h3>
 
     <h4>{error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
 
     
 <form id="login-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 
-<TextField required id="standard-email-input"
+<TextField 
           label="Email"
           type="email"
           autoComplete="current-email"
@@ -71,7 +68,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}  
           
         />
-<TextField required id="standard-password-input"
+<TextField 
           label="Password"
           type="password"
           autoComplete="current-password"
