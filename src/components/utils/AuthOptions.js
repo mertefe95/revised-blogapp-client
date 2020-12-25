@@ -24,6 +24,7 @@ const AuthOptions = () => {
     { userData.user ? (
       <ul className="header-ul">
       <li className="header-li"><Button variant="outlined" size="small" onClick={createPost}>CREATE A POST</Button></li>
+      <li className="header-li"><Button variant="outlined" size="small" onClick={createPost}>MY PROFILE ({userData.user.username})</Button></li>
       <li className="header-li"><Button variant="outlined" size="small" onClick={logout}>Logout</Button></li>
       </ul>
     ) : (

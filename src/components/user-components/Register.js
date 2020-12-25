@@ -12,6 +12,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const Register = () => {
     const [username, setUsername] = useState();
+    const [firstname, setFirstname] = useState();
+    const [lastName, setLastName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
@@ -56,11 +58,34 @@ const Register = () => {
         </h4>
 
       <form id="register-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
-      <TextField
-        onChange={(e) => setUsername(e.target.value)}
+      
+      <TextField required id="standard-first-input"
+          label="Username"
+          type="text"
+          autoComplete="current-username"
+          id="register-username"
+          onChange={(e) => setUsername(e.target.value)}  
+          
+        />
+        <TextField
+        onChange={(e) => setFirstname(e.target.value)}
         className={classes.margin}
         id="input-with-icon-textfield"
-        label="Username"
+        label="First Name"
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <AccountCircle />
+            </InputAdornment>
+          ),
+        }}
+        
+      />
+      <TextField
+        onChange={(e) => setLastName(e.target.value)}
+        className={classes.margin}
+        id="input-with-icon-textfield"
+        label="Last Name"
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">

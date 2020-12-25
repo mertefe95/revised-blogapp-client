@@ -16,7 +16,7 @@ import ForgotPassword from "./components/user-components/ForgotPassword";
 import ChangePassword from './components/user-components/ChangePassword';
 import UserActivated from "./components/user-components/UserActivated";
 import Blog from "./components/blog-template/Blog";
-
+import MyProfile from "./components/user-components/MyProfile";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -77,6 +77,7 @@ function App() {
       <Switch>
         <Route exact path="/" exact render={() => <Blog posts={posts} />} />
         <Route exact path="/post/:id" exact render={(props) => <Post {...props}  posts={posts} />} />
+        <Route exact path="/user-profile/:id" exact component={MyProfile} />
         <Route exact path="/admin-login" exact component={AdminLogin} />
         <Route exact path="/register" exact component={Register} />
         <Route exact path="/login" exact component={Login} />
