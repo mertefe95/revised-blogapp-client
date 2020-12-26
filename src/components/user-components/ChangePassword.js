@@ -70,7 +70,7 @@ const submit = async (e) => {
           onChange={(e) => setNewPassword(e.target.value)}
         />
 
-        <Button variant="contained" color="primary" type="submit">
+        <Button variant="contained" color="default" type="submit">
         Submit
         </Button>
   
