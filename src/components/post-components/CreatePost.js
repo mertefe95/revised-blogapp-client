@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import Axios from "axios";
 import UserContext from "../context/UserContext";
-import ErrorNotice from "../utils/ErrorNotice";
+import Alert from "@material-ui/lab/Alert";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -57,11 +57,9 @@ const CreatePost = () => {
 
         <div className="create-post-page">
             <h1>Create a Blog Post</h1>
-            <span className="message">{message}</span>
-            <h4>
-            {error && (
-            <ErrorNotice message={error} clearError={() => setError(undefined)} />
-            )}
+            <h3 className="success-message">{message && <Alert severity="success">{message}</Alert>} </h3>
+            <h4 className="error-message">
+            {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
             </h4>
             
             <form id="create-post-form" onSubmit={changeOnClick} encType="multipart/form-data"  className={classes.root} noValidate autoComplete="off">    

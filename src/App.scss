@@ -76,6 +76,7 @@
   height: 100vh;
   text-align: center;
   margin-top: 100px;
+  font-family: 'Roboto';
 }
 
 #admin-login-form {
@@ -85,7 +86,6 @@
   
 
 }
-
 
 
 
@@ -259,4 +259,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+.errorz {
+  width: 20%;
+}
+
+.error-message, .notice-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }

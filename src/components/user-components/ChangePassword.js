@@ -4,6 +4,8 @@ import ErrorNotice from "../../components/utils/ErrorNotice";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import Alert from "@material-ui/lab/Alert";
+
 
 const ChangePassword = ({ match }) => {
   const [newPassword, setNewPassword] = useState();
@@ -54,16 +56,14 @@ const submit = async (e) => {
   return (
     <div className="change-password-page">
         <h2>Change your password!</h2>
-        <h3 className="notice-message">{noticeMessage.text}</h3>
-        <h4>
-        {error && (
-            <ErrorNotice message={error} clearError={() => setError(undefined)} />
-        )}
+        <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
+        <h4 className="error-message">
+        {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
         </h4>
 
         <form id="change-password-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 
-        <TextField required id="standard-password-input"
+        <TextField 
           label="Password"
           type="password"
           autoComplete="current-password"

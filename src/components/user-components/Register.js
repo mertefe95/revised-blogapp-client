@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import Alert from '@material-ui/lab/Alert';
 
 
 const Register = () => {
@@ -51,10 +52,8 @@ const Register = () => {
     <div className="register-page">
         <h2>Register</h2>
         <h3 className="notice-message">{noticeMessage.text}</h3>
-        <h4>
-        {error && (
-            <ErrorNotice message={error} clearError={() => setError(undefined)} />
-        )}
+        <h4 className="error-message">
+        {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>}
         </h4>
 
       <form id="register-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">

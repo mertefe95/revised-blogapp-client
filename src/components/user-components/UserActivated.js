@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Axios from "axios";
 import { Link } from "react-router-dom";
-import ErrorNotice from ".././utils/ErrorNotice";
+import Alert from '@material-ui/lab/Alert';
 
 function UserActivated({ match }) {
 
@@ -27,9 +27,9 @@ useEffect(() => {
     <div id="user-activated-page">
     <h2>User Activation</h2>
 
-    <h4> {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
+    <h4 className="error-message"> {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>}  </h4>
 
-    <h3>{noticeMessage.text}</h3>
+    <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
     <h4>{noticeMessage.text ? ( <Link to="/login">Please proceed to Login</Link> ) : (  <> </> ) }</h4> 
   
 </div>

@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField"
+import Alert from "@material-ui/lab/Alert";
 
 const AdminLogin = () => {
   const [error, setError] = useState();
@@ -54,9 +55,7 @@ return (
 <div className="admin-login-page">
     <h2>Admin Login</h2>
 
-    <h4>{error && (
-            <ErrorNotice message={error} clearError={() => setError(undefined)} />
-        )} </h4>
+    <h4 className="error-message"> {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} </h4>
 
         <form id="admin-login-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 

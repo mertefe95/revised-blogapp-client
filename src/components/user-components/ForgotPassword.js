@@ -4,6 +4,8 @@ import ErrorNotice from "../utils/ErrorNotice";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Alert from "@material-ui/lab/Alert";
+
 
 const ForgotPassword = () => {
 
@@ -50,9 +52,9 @@ const ForgotPassword = () => {
 
     <h4>Please enter your email for password change.</h4>
 
-    <h4> {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
+    <h4 className="error-message"> {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
 
-    <h3 className="notice-message">{noticeMessage.text}</h3>
+    <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
 
     <form id="forgot-password-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 

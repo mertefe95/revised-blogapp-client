@@ -1,22 +1,26 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import Alert from '@material-ui/lab/Alert';
+
 
 const ErrorNotice = (props) => {
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      '& > *': {
-        margin: theme.spacing(1),
-      },
+  
+  
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    '& > * + *': {
+      marginTop: theme.spacing(2),
     },
-  }))
-
-
-return (
-  <div className="error-notice">
-      <span>{props.message}</span>
-      <Button onClick={props.clearError} color="secondary">CLEAR MESSAGE</Button>
+  },
+}));
+const classes = useStyles();
+return ( 
+  <div className={classes.root}>
+      <Alert severity="error"  ><span>{props.message}</span></Alert>
   </div>
+  
 )
 }
 

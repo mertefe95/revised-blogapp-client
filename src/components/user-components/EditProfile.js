@@ -1,18 +1,20 @@
 import React, {useState, useContext } from "react";
 import UserContext from ".././context/UserContext";
 import Axios from "axios";
-import ErrorNotice from "../utils/ErrorNotice";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Alert from '@material-ui/lab/Alert';
+
 
 const EditProfile = () => {
     const [firstname, setFirstname] = useState();
     const [lastname, setLastname] = useState();
     const [nationality, setNationality] = useState();
     const [pointOfInterests, setPointOfInterests] = useState();
-    const [message, setMessage] = useState();
+    const [noticeMessage, setMessage] = useState({
+        text: undefined
+    });
     const [error, setError] = useState();
 
     const { userData} = useContext(UserContext); 
@@ -59,12 +61,10 @@ const EditProfile = () => {
         <div id="edit-profile-page">
             <h1>Edit User Profile</h1>
             
-            <h4>
-            {error && (
-            <ErrorNotice message={error} clearError={() => setError(undefined)} />
-            )}
+            <h4 className="error-message">
+            {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
             </h4>
-            {message ? <span className="message"><Alert severity="success">{message}</Alert></span> : <span></span>}
+            <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
             
 
 
