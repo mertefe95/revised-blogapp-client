@@ -66,7 +66,7 @@ const ForgotPassword = () => {
         />
 
         
-    <Button variant="contained" color="primary" type="submit">
+    <Button variant="contained" type="submit">
         Submit
     </Button>
     </form>
