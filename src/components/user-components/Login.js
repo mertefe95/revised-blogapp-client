@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import Axios from "axios";
-import ErrorNotice from "../utils/ErrorNotice";
 import { useHistory } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import Button from "@material-ui/core/Button";
@@ -56,7 +55,7 @@ const Login = () => {
     <h2>Login</h2>
 
 
-    <h3>{error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} </h3>
+    <h3 className="error-message">{error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} </h3>
 
     
 <form id="login-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">

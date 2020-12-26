@@ -63,13 +63,16 @@
 
 
 #user-activated-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;;
   font-family: 'Roboto';
   text-align: center;
   height: 100vh;
+}
+
+#user-activated-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .admin-login-page {
@@ -266,7 +269,7 @@
   width: 20%;
 }
 
-.error-message, .notice-message {
+.error-message, .success-message {
   display: flex;
   justify-content: center;
   align-items: center;

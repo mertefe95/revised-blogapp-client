@@ -18,9 +18,7 @@ const Register = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
-    const [noticeMessage, setVerifyMessage] = useState({
-    text: undefined,
-    });
+    const [noticeMessage, setNoticeMessage] = useState("");
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -39,19 +37,20 @@ const Register = () => {
 
     try {
         const newUser = { username, email, password, firstname, lastname };
-        await Axios.post("https://blog-app-revised.herokuapp.com/users/register", newUser);
-
-        setVerifyMessage({
-        text: "Succesful Registration! Please verify your email address before Login.",
-        });
-    } catch (err) {
-        err.response.data.msg && setError(err.response.data.msg);
-    }}
+        await Axios.post("https://blog-app-revised.herokuapp.com/users/register", newUser)
+        .then(res => setNoticeMessage(res.data.msg))
+        .catch(err => {
+            err.response.data.msg && setError(err.response.data.msg);
+        })
+        } catch (err) {
+            err.response.data.msg && setError(err.response.data.msg);
+        }}
+    
 
     return (
     <div className="register-page">
         <h2>Register</h2>
-        <h3 className="notice-message">{noticeMessage.text}</h3>
+        <h3 className="success-message">{noticeMessage && <Alert severity="success">{noticeMessage}</Alert>} </h3>
         <h4 className="error-message">
         {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>}
         </h4>

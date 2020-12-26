@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios";
-import Alert from "@material-ui/labs/Alert";
+import Alert from "@material-ui/lab/Alert";
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -71,7 +71,7 @@ const useStyles = makeStyles({
     </Card>
 
       
-        <h4>
+        <h4 className="error-message">
         {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
         </h4>
         </div>

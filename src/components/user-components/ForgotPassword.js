@@ -10,10 +10,8 @@ import Alert from "@material-ui/lab/Alert";
 const ForgotPassword = () => {
 
   const [email, setEmail] = useState("");
-  const [error, setError] = useState();
-  const [noticeMessage, setVerifyMessage] = useState({
-        text: undefined
-    });
+  const [error, setError] = useState("");
+  const [noticeMessage, setNoticeMessage] = useState("");
 
     const useStyles = makeStyles((theme) => ({
       root: {
@@ -35,10 +33,9 @@ const ForgotPassword = () => {
     await Axios.post(
         "https://blog-app-revised.herokuapp.com/users/forgot-password", 
         user
-    );
-
-    await setVerifyMessage({
-        text: "Please check your email for password change."
+    ).then(res => setNoticeMessage(res.data.msg))
+    .catch(err => {
+        err.response.data.msg && setError(err.response.data.msg);
     })
     } catch (err) {
         err.response.data.msg && setError(err.response.data.msg);
@@ -52,9 +49,11 @@ const ForgotPassword = () => {
 
     <h4>Please enter your email for password change.</h4>
 
-    <h4 className="error-message"> {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />} </h4>
+    <h4 className="error-message">
+            {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
+    </h4>
 
-    <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
+    <h3 className="success-message">{noticeMessage && <Alert severity="success">{noticeMessage}</Alert>} </h3>
 
     <form id="forgot-password-form" onSubmit={submit} className={classes.root} noValidate autoComplete="off">
 

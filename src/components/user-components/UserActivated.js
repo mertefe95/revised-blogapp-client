@@ -25,13 +25,14 @@ useEffect(() => {
 
   return (
     <div id="user-activated-page">
-    <h2>User Activation</h2>
 
+    <div id="user-activated-div">
+    <h2>User Activation</h2>
     <h4 className="error-message"> {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>}  </h4>
 
     <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
     <h4>{noticeMessage.text ? ( <Link to="/login">Please proceed to Login</Link> ) : (  <> </> ) }</h4> 
-  
+    </div>
 </div>
   )
 }
