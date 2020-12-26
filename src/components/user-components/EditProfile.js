@@ -12,9 +12,7 @@ const EditProfile = () => {
     const [lastname, setLastname] = useState();
     const [nationality, setNationality] = useState();
     const [pointOfInterests, setPointOfInterests] = useState();
-    const [noticeMessage, setMessage] = useState({
-        text: undefined
-    });
+    const [noticeMessage, setNoticeMessage] = useState("");
     const [error, setError] = useState();
 
     const { userData} = useContext(UserContext); 
@@ -36,7 +34,7 @@ const EditProfile = () => {
 
         Axios
             .put(`http://localhost:8080/userprofiles/edit/${userData.user.id}`, post)
-            .then(res => setMessage(res.data.msg))
+            .then(res => setNoticeMessage(res.data.msg))
             .catch(err => {
                 err.response.data.msg && setError(err.response.data.msg);
             })
@@ -64,7 +62,7 @@ const EditProfile = () => {
             <h4 className="error-message">
             {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
             </h4>
-            <h3 className="success-message">{noticeMessage.text && <Alert severity="success">{noticeMessage.text}</Alert>} </h3>
+            <h3 className="success-message">{noticeMessage && <Alert severity="success">{noticeMessage}</Alert>} </h3>
             
 
 

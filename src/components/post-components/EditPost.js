@@ -53,8 +53,8 @@ const EditPost = props => {
 
     return (
         
-        <div className="edit-post-page">
-            <h1>Update Blog Post</h1>
+        <div id="edit-post-page">
+            <h2>Update Blog Post</h2>
             <h3 className="success-message">{message && <Alert severity="success">{message}</Alert>} </h3>
             <h4 className="error-message">
             {error && <Alert severity="error" onClose={() => setError(undefined)}>{error}</Alert>} 
@@ -76,7 +76,7 @@ const EditPost = props => {
             id="blogText"  
             onChange={e => setBlogText(e.target.value)} 
         />
-            <Button variant="contained" color="primary" type="submit">
+            <Button variant="contained" type="submit">
                 Submit
             </Button>
 
