@@ -1,6 +1,5 @@
 import React, { useState, useEffect }  from "react";
 import Axios from "axios";
-import ErrorNotice from "../../components/utils/ErrorNotice";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -17,7 +16,7 @@ const ChangePassword = ({ match }) => {
 
   useEffect(() => {
     try {
-      Axios.get(`http://localhost:8080/users/forgot-password/${match.params.forgotToken}`)
+      Axios.get(`https://blog-app-revised.herokuapp.com/users/forgot-password/${match.params.forgotToken}`)
       .then(res => [
         setForgotToken(match.params.forgotToken),
         setNoticeMessage({
