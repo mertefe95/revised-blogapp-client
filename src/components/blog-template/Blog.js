@@ -44,6 +44,8 @@ const sidebar = {
   ],
 };
 
+
+
 export default function Blog({ posts  } ) {
   const classes = useStyles();
 
@@ -54,7 +56,7 @@ export default function Blog({ posts  } ) {
         
         <main>
           <Grid id="main-container" container spacing={5} className={classes.mainGrid}>
-            { window.location.href === "http://localhost:3000/" ? 
+            { window.location.pathname === "/" ? 
             <Main title="Welcome to the Blog Application" posts={posts}  /> : 
             <PostByCategory />
             }     
