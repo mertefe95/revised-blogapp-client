@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
@@ -8,13 +9,15 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import Main from './Main';
 import Sidebar from './Sidebar';
-
+import PostByCategory from "./PostByCategory";
+import Post from '../post-components/Post';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
 }));
+
 
 
 const sidebar = {
@@ -41,7 +44,7 @@ const sidebar = {
   ],
 };
 
-export default function Blog({ posts } ) {
+export default function Blog({ posts  } ) {
   const classes = useStyles();
 
   return (
@@ -51,7 +54,10 @@ export default function Blog({ posts } ) {
         
         <main>
           <Grid id="main-container" container spacing={5} className={classes.mainGrid}>
-            <Main title="Welcome to the Blog Application" posts={posts}  />
+            { window.location.href === "http://localhost:3000/" ? 
+            <Main title="Welcome to the Blog Application" posts={posts}  /> : 
+            <PostByCategory />
+            }     
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

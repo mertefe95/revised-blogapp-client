@@ -66,7 +66,7 @@ function App() {
 
   useEffect(() => {
     Axios
-    .get('https://blog-app-revised.herokuapp.com/posts')
+    .get('https://blog-app-revised.herokuapp.com/posts/')
     .then(res => setPosts(res.data.reverse()))
     .catch(error => console.log(error));
   })
@@ -87,7 +87,7 @@ function App() {
         <Route exact path="/forgot-password"  component={ForgotPassword} />
         <Route exact path="/change-password/:forgotToken" component={ChangePassword} />
         <Route exact path="/user-activated/:activationKey" component={UserActivated} />
-        <Route exact path="/category/:name" component={PostsByCategory} />
+        <Route exact path="/category/:name" component={Blog} />
         { userData.user ? (
           <Route exact path="/myprofile/edit/:id" component={EditProfile} />
         ) : (

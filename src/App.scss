@@ -11,7 +11,6 @@
   margin-top: 20px;
 }
 
-
 .auth-options {
   display: flex;
   justify-content: space-evenly;
@@ -39,19 +38,16 @@
   }
 }
 
-
 .forgot-password-page {
   height: 100vh;
   text-align: center;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   margin-top: 100px;
 
   h4 {
     padding-top: 20px;
   }
 }
-
-
 
 #forgot-password-form {
   display: flex;
@@ -61,9 +57,8 @@
   padding-top: 40px;
 }
 
-
 #user-activated-page {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   text-align: center;
   height: 100vh;
 }
@@ -79,22 +74,18 @@
   height: 100vh;
   text-align: center;
   margin-top: 100px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
 #admin-login-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-
-
 
 .grid-item {
   padding: 70px;
 }
-
 
 .blog-title {
   color: black;
@@ -106,14 +97,14 @@
 }
 
 .post-text {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 16px;
 }
 
 .post-title {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 1.5rem;
   line-height: 1.334;
   margin-bottom: 0.35em;
@@ -125,27 +116,27 @@
 }
 
 .post-time-author {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 0.75rem;
   line-height: 1.66;
   letter-spacing: 0.03333em;
   margin-bottom: 16px;
 }
 
-.post-div{
+.post-div {
   padding: 24px 0;
 }
 
 .author-link {
   text-decoration: none;
-  color: #1976D2;
+  color: #1976d2;
 }
 
 .header-li {
   padding: 10px;
 }
 
-.edit{
+.edit {
   color: black;
 }
 
@@ -154,15 +145,18 @@
   border-style: none;
 }
 
-.login-page, .register-page {
-  font-family: 'Roboto';
+.login-page,
+.register-page {
+  font-family: "Roboto";
 }
 
-#login-form button, #register-form button {
+#login-form button,
+#register-form button {
   margin: 20px;
 }
 
-#register-btn, #login-btn {
+#register-btn,
+#login-btn {
   font-weight: 600;
 }
 
@@ -181,13 +175,14 @@
   font-size: 10px;
 }
 
-.admin-link, .forgot-link {
+.admin-link,
+.forgot-link {
   color: grey;
   text-decoration: none;
   font-size: 16px;
 }
 
-.register-page  {
+.register-page {
   height: 100vh;
   text-align: center;
   margin-top: 100px;
@@ -198,8 +193,8 @@
   margin-top: 170px;
 }
 
-
-#login-form, #register-form {
+#login-form,
+#register-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -213,7 +208,7 @@
 
 .my-profile-ul {
   list-style: none;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -224,7 +219,6 @@
 .my-profile-ul > li {
   padding: 20px;
 }
-
 
 #main-container {
   height: 150vh;
@@ -263,12 +257,12 @@
   align-items: center;
 }
 
-
 .errorz {
   width: 20%;
 }
 
-.error-message, .success-message {
+.error-message,
+.success-message {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -277,7 +271,7 @@
 
 #edit-post-page {
   height: 100vh;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   text-align: center;
   margin-top: 100px;
 }
@@ -287,4 +281,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.post-category-link {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.header-links {
+  color: grey;
+  text-decoration: none;
 }
