@@ -41,7 +41,7 @@ const sidebar = {
   ],
 };
 
-export default function Blog({ posts }) {
+export default function Blog({ posts } ) {
   const classes = useStyles();
 
   return (

@@ -36,7 +36,7 @@ const MyProfile = () => {
   return (
     <div id="my-profile">
     <ul className="my-profile-ul">
-    <li><Avatar>{userData.user.username[0]}</Avatar></li>
+    <li><Avatar>{userData.user.username}</Avatar></li>
     <li><p>Username: {userData.user.username}</p></li>
     <li><p>Firstname: {firstname}</p></li>
     <li><p>Lastname: {lastname}</p></li>

@@ -5,11 +5,17 @@ import Alert from "@material-ui/lab/Alert";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 
 const CreatePost = () => {
     const [blogTitle, setBlogTitle] = useState("");
     const [blogText, setBlogText] = useState("");
+    const [category, setCategory] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState();
     
@@ -17,6 +23,8 @@ const CreatePost = () => {
         
     const authorName = userData.user.username
     const userId = userData.user.id
+
+    console.log(category)
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -38,8 +46,9 @@ const CreatePost = () => {
         const post = {
             blogTitle,
             blogText,
-            userId,
-            authorName
+            authorName,
+            category,
+            userId
         }
 
         Axios
@@ -77,6 +86,35 @@ const CreatePost = () => {
             id="blogText"  
             onChange={e => setBlogText(e.target.value)} 
         />
+
+        <FormControl className={classes.formControl}>
+        <InputLabel id="demo-simple-select-helper-label">Blog Category:</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={category}
+          onChange={e => setCategory(e.target.value)}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={"Technology"}>Technology</MenuItem>
+          <MenuItem value={"Design"}>Design</MenuItem>
+          <MenuItem value={"Culture"}>Culture</MenuItem>
+          <MenuItem value={"Business"}>Business</MenuItem>
+          <MenuItem value={"Politics"}>Politics</MenuItem>
+          <MenuItem value={"Opinion"}>Opinion</MenuItem>
+          <MenuItem value={"Science"}>Science</MenuItem>
+          <MenuItem value={"Health"}>Health</MenuItem>
+          <MenuItem value={"Style"}>Style</MenuItem>
+          <MenuItem value={"Travel"}>Travel</MenuItem>
+        </Select>
+        <FormHelperText>Pick a Category for your post.</FormHelperText>
+      </FormControl>
+
+
+
+
             <Button variant="contained" color="default" type="submit">
                 Submit
             </Button>

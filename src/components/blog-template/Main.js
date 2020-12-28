@@ -23,7 +23,7 @@ export default function Main(props) {
   }));
 
   const classes = useStyles();
-        
+  
   
   const deletePost = id => {
     try {
@@ -50,6 +50,7 @@ export default function Main(props) {
           }}>{post.blogTitle}</Link></h5>
           <p className="post-time-author">{post.createdAt} by <Link className="author-link" to="#">{post.authorName}</Link> </p>
           <p className="post-text">{post.blogText}</p>
+          <p className="post-category">#{post.category}</p>
           <h4>
           {error && (
             <ErrorNotice message={error} clearError={() => setError(undefined)} />

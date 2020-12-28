@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import Axios from "axios";
-import ErrorNotice from "../utils/ErrorNotice";
 import UserContext from "../context/UserContext";
 import { useHistory } from "react-router-dom";
 import Button from "@material-ui/core/Button";

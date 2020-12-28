@@ -17,6 +17,7 @@ import UserActivated from "./components/user-components/UserActivated";
 import Blog from "./components/blog-template/Blog";
 import MyProfile from "./components/user-components/MyProfile";
 import EditProfile from "./components/user-components/EditProfile";
+import PostsByCategory from "./components/blog-template/PostByCategory";
 
 function App() {
   const [posts, setPosts] = useState([])
@@ -86,6 +87,7 @@ function App() {
         <Route exact path="/forgot-password"  component={ForgotPassword} />
         <Route exact path="/change-password/:forgotToken" component={ChangePassword} />
         <Route exact path="/user-activated/:activationKey" component={UserActivated} />
+        <Route exact path="/category/:name" component={PostsByCategory} />
         { userData.user ? (
           <Route exact path="/myprofile/edit/:id" component={EditProfile} />
         ) : (
