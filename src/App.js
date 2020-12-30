@@ -113,7 +113,7 @@ function App() {
           </>
         )} 
       </Switch>
-      <Footer title="Footer" description="Something here to give the footer a purpose!" />
+     
       </UserContext.Provider>
     </Router>
 

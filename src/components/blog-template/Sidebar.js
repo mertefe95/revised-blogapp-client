@@ -28,7 +28,7 @@ export default function Sidebar(props) {
         <Typography>{description}</Typography>
       </Paper>
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-        Archives
+        Archives (Feature Currently Disabled)
       </Typography>
       {archives.map((archive, key) => (
         <Link display="block" variant="body1" to={archive.url} key={key}>
@@ -36,7 +36,7 @@ export default function Sidebar(props) {
         </Link>
       ))}
       <Typography variant="h6" gutterBottom className={classes.sidebarSection}>
-        Social
+        Social  (Feature Currently Disabled)
       </Typography>
       {social.map((network, key) => (
         <Link display="block" variant="body1" to="#" key={key}>

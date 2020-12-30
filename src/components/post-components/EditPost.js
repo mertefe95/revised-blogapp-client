@@ -27,8 +27,6 @@ const EditPost = props => {
             userId
         };
         
-  
-
         Axios
             .put(`https://blog-app-revised.herokuapp.com/posts/edit/${props.match.params.id}`, post)
             .then(res => setMessage(res.data.msg))

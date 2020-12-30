@@ -17,14 +17,14 @@ const CreatePost = () => {
     const [blogText, setBlogText] = useState("");
     const [category, setCategory] = useState("");
     const [message, setMessage] = useState("");
-    const [error, setError] = useState();
-    
+    const [error, setError] = useState("");
+
+
     const { userData } = useContext(UserContext); 
         
     const authorName = userData.user.username
     const userId = userData.user.id
 
-    console.log(category)
 
     const useStyles = makeStyles((theme) => ({
         root: {
@@ -39,10 +39,10 @@ const CreatePost = () => {
 
     const changeOnClick = e => {
         
-    
         e.preventDefault();
 
         try {
+
         const post = {
             blogTitle,
             blogText,
@@ -111,9 +111,6 @@ const CreatePost = () => {
         </Select>
         <FormHelperText>Pick a Category for your post.</FormHelperText>
       </FormControl>
-
-
-
 
             <Button variant="contained" color="default" type="submit">
                 Submit

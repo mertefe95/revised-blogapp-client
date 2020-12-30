@@ -23,7 +23,6 @@ const PostList = ({title, posts }) => {
   }));
 
 
-
   const deletePost = id => {
     try {
         Axios.delete(`https://blog-app-revised.herokuapp.com/posts/${id}`)

@@ -5,10 +5,10 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import Typography from '@material-ui/core/Typography';
-import {Link} from "react-router-dom";
+import { Link} from "react-router-dom";
 import AuthOptions from "../utils/AuthOptions"
 import { Container } from "@material-ui/core";
-import  { useHistory} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,8 +54,8 @@ export default function Header(props) {
 
 
   return (
-    <React.Fragment>
-    <Container maxWidth="lg">
+    <React.Fragment className="big-header">
+    <Container maxWidth="lg" >
       <Toolbar className={classes.toolbar}>
         <Button size="small" onClick={click}>View All Posts</Button>
         <Typography
@@ -73,7 +73,7 @@ export default function Header(props) {
         </IconButton>
         <AuthOptions />
       </Toolbar>
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
+      <Toolbar component="nav" variant="dense" id="toolbar" className={classes.toolbarSecondary}>
         {sections.map((section, key) => (
           <Link
          
