@@ -49,11 +49,14 @@ function App() {
         token = "";
       }
 
+
       const userRes = await Axios.post(
         "https://blog-app-revised.herokuapp.com/users/tokenIsValid",
-        null,
-        { headers: { "x-auth-token": token } }
+        '',
+        { headers: { "x-auth-token": token, 'Content-Type': 'application/json' } }
         );
+
+        
 
       setUserData({
         token,
@@ -69,7 +72,7 @@ function App() {
     .get('https://blog-app-revised.herokuapp.com/posts/')
     .then(res => setPosts(res.data.reverse()))
     .catch(error => console.log(error));
-  })
+  }, [])
 
   
   return (
@@ -113,7 +116,7 @@ function App() {
           </>
         )} 
       </Switch>
-     
+  
       </UserContext.Provider>
     </Router>
 
